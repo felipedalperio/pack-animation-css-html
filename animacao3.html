@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=nav, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .links {
+        width: 100%;
+        height: 50px;
+        position: fixed;
+        display: flex;
+    }
+    .links label {
+        padding: 10px 0;
+        flex-grow:1;
+        cursor: pointer;
+        transition:all .4s;
+        text-align: center;
+        font-family: 'Arial';
+        font-size: 100%;
+        color:white;
+    }
+    .links label:hover{
+            background-color: rgba(255,255,255,.2)
+    }
+    .scroll input{
+        display:none;  /* pra sumir com os radios */
+    }
+    .bloco img /* Tamanho da imagem*/ {
+            width: 40%;     
+    }
+
+    .bloco {
+        width: 100vw;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+   
+    #nodejs {
+        background-color: #7dbd42;
+    }
+    #bootstrap {
+        background-color: rgb(97, 64, 142);
+    }
+    #html {
+        background-color: rgb(238,101,53);
+    }
+    #css {
+        background-color:rgb(23,24,28);
+    }
+    #java {
+        background-color: rgb(240, 218, 80);
+    }
+    bloco#css{
+        width: 60%;
+    }
+    .scroll {
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;  /* Para esconder a barra que vai pra baixo e pra cima hehehehe*/
+    }
+    .sections{ /* duração da animação */
+        transition:all .4s;
+    }
+  #rd_bootstrap:checked ~ .sections{ /* se estiver selecionado faça: */
+        margin-top: -100vh;
+  }
+  #rd_html:checked ~ .sections{
+        margin-top: -200vh;
+  }
+  #rd_css:checked ~ .sections{
+        margin-top: -300vh;
+  }
+  #rd_java:checked ~ .sections{
+        margin-top: -400vh;
+  }
+/* Animação pra pular igual um cabrito */
+  img:hover{
+                        animation: bounce .4s;
+                        cursor:pointer;        
+                        filter: saturate(500%);         
+                                             
+          }
+          @keyframes bounce {
+               40%,70%{
+                  transform: translateY(-70px); /*10 px pra cima */
+              }
+              30%,85% {
+                    transform:translateY(40px);
+                  }
+                  
+          }
+</style>
+<body>
+    <nav class="links">
+            <label for="rd_nodejs">Node JS</label>
+            <label for="rd_bootstrap">Bootstrap</label>
+            <label for="rd_html">Html</label>
+            <label for="rd_css">Css</label>
+            <label for="rd_java">Java</label>
+    </nav>
+
+    <div class="scroll">
+        <input type="radio" name="grupo" id="rd_nodejs" checked="true">
+        <input type="radio" name="grupo" id="rd_bootstrap">
+        <input type="radio" name="grupo" id="rd_html">
+        <input type="radio" name="grupo" id="rd_css">
+        <input type="radio" name="grupo" id="rd_java">
+
+    <section class="sections">
+            <section class="bloco" id="nodejs"><img src="imagens/node.png"></section>
+            <section class="bloco" id="bootstrap"><img src="imagens/bootstrap.png"></section>
+            <section class="bloco" id="html"><img src="imagens/html5.png"></section>
+            <section class="bloco" id="css"><img src="imagens/css3.png"></section>
+            <section class="bloco" id="java"><img src="imagens/java.png"></section>
+    </section>
+    
+</div>
+</body>
+<!--youtube tutorial :  https://www.youtube.com/watch?v=QiI6PbD6Ei4 -->
+<!-- fontes de css massa : https://maujor.com/tutorial/css3-filters.php-->
+<!-- remover o fundo : http://www.online-image-editor.com/-->
+</html>
+

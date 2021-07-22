@@ -1,0 +1,156 @@
+<!--  Galeria lightbox -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Barriecito&display=swap" rel="stylesheet">
+    <title>animação</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+    
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    ul{
+        width: 880px;
+        list-style: none;
+        display: flex;
+        margin: 100px auto
+    }
+
+    .lbox {
+        visibility: hidden;
+        opacity: 0;
+    }
+
+.min{
+    width: 200px;
+    padding: 20px;
+}
+.min:hover{
+    animation: bounce .6s;
+    width: 300px;
+    padding: 0px;
+    margin-top:-20px;
+    box-shadow: 10px  10px  10px  rgba(7, 7, 7, 0.486);
+    filter: saturate(200%);
+}
+@keyframes bounce {
+               40%{
+                    transform: scale(1.3);/*10 px pra cima */
+              }
+}
+.lbox:target{
+    opacity: 1;
+    visibility: visible;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    background: rgba(10,10,10,.7);
+
+    position: fixed;
+}
+.box_img{
+    width: 1000px;
+    border: 1px solid black;
+    margin: 150px auto;
+}
+.btn {
+    color: #fff;
+    font-family: 'Barriecito', cursive;
+    text-decoration: none;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    font-size: 40px;
+    text-align: center;
+}
+.btn:hover{
+    color:#F6D842;
+}
+
+#prev{
+    left: 5%;
+    top:45%;
+}
+#next{
+    right: 5%;
+    top:45%;
+}
+#clone{
+    top:0;
+    right: 2%;
+}
+.box_img img{
+            opacity: 0;
+}
+.lbox:target    .box_img img{
+        opacity: 1;
+        transition:  opacity .4s linear;
+}
+
+</style>
+<body class="container-fluid">
+
+ <ul>
+     <li><a href="#img1"><img src="imagens/jogo1.jpg" class="min"></a></li>
+     <li><a href="#img2"><img src="imagens/jogo2.jpg" class="min"></a></li>
+     <li><a href="#img3"><img src="imagens/jogo3.jpg" class="min"></a></li>
+     <li><a href="#img4"><img src="imagens/jogo4.jpg" class="min"></a></li>
+ </ul>
+
+   <div class="lbox" id="img1">
+            <div class="box_img">
+                        <!-- botao da esquerda: -->
+                        <a href="#img4" class="btn" id="prev">&#171;</a>
+                        <!-- botao que fecha-->
+                        <a href="" class="btn" id="close">X</a>
+                        <img src="imagens/jogo1.jpg" width="1000px">
+                         <!-- botao da direita: -->
+                         <a href="#img2" class="btn" id="next">&#187;</a>
+                    </div>
+   </div>
+
+   <div class="lbox" id="img2">
+        <div class="box_img">
+                    <!-- botao da esquerda: -->
+                    <a href="#img1" class="btn" id="prev">&#171;</a>
+                    <!-- botao-->
+                    <a href="" class="btn" id="close">X</a>
+                    <img src="imagens/jogo2.jpg" width="1000px">
+                     <!-- botao da direita: -->
+                     <a href="#img3" class="btn" id="next">&#187;</a>
+                </div>
+</div>
+
+<div class="lbox" id="img3">
+        <div class="box_img">
+                    <!-- botao da esquerda: -->
+                    <a href="#img2" class="btn" id="prev">&#171;</a>
+                    <!-- botao-->
+                    <a href="" class="btn" id="close">X</a>
+                    <img src="imagens/jogo3.jpg" width="1000px">
+                     <!-- botao da direita: -->
+                     <a href="#img4" class="btn" id="next">&#187;</a>
+                </div>
+</div>
+
+<div class="lbox" id="img4">
+        <div class="box_img">
+                    <!-- botao da esquerda: -->
+                    <a href="#img3" class="btn" id="prev">&#171;</a>
+                    <!-- botao-->
+                    <a href="" class="btn" id="close">X</a>
+                    <img src="imagens/jogo4.jpg" width="1000px">
+                     <!-- botao da direita: -->
+                     <a href="#img1" class="btn" id="next">&#187;</a>
+                </div>
+</div>
+    
+</body>
+</html>
